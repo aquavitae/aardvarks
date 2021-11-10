@@ -1,0 +1,16 @@
+extends:
+  - airbnb-base
+  - prettier
+parserOptions:
+  ecmaVersion: 2020
+globals:
+  Hooks: readonly
+  Ray: readonly
+  Roll: readonly
+  canvas: readonly
+  game: readonly
+  ui: readonly
+  # extra
+  libWrapper: readonly
+rules:
+  import/extensions: ['error', 'always']
