@@ -4,13 +4,16 @@ extends:
 parserOptions:
   ecmaVersion: 2020
 globals:
+  canvas: readonly
+  game: readonly
+  getProperty: readonly
   Hooks: readonly
   Ray: readonly
   Roll: readonly
-  canvas: readonly
-  game: readonly
   ui: readonly
+  fromUuid: readonly
   # extra
   libWrapper: readonly
+  MidiQOL: readonly
 rules:
   import/extensions: ['error', 'always']

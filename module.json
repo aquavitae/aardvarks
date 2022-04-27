@@ -3,7 +3,7 @@
   "title": "Aardvarks",
   "description": "This module automates some of my homebrew rules for DnD 5e.",
   "version": "1.0.0",
-  "minimumCoreVersion": "0.8.9",
+  "minimumCoreVersion": "9",
   "author": "aquavitae",
   "dependencies": [
     {
@@ -12,15 +12,5 @@
   ],
   "esmodules": [
     "scripts/index.js"
-  ],
-  "styles": [
-    "/styles/module.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
-    }
   ]
 }

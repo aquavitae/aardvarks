@@ -50,19 +50,21 @@ const onPreAttackRollComplete = async (workflow) => {
   }
 };
 
-const onUpdateCombat = async () => {
-  await game.actors.forEach(async (actor) => {
-    const used = (await actor.getFlag(moduleName, returningUsed)) || [];
-    used.forEach(async (itemId) => {
-      const item = actor.items.get(itemId);
-      await addItemCount(item, 1);
-      log(`Returned 1 ${item.name} to ${actor.name}`);
+const onUpdateCombat = async (combat) => {
+  if (combat.started && combat.previous.turn !== combat.current.turn) {
+    await canvas.tokens.ownedTokens.forEach(async ({ actor }) => {
+      const used = (await actor.getFlag(moduleName, returningUsed)) || [];
+      used.forEach(async (itemId) => {
+        const item = actor.items.get(itemId);
+        await addItemCount(item, 1);
+        log(`Returned 1 ${item.name} to ${actor.name}`);
+      });
+      await actor.unsetFlag(moduleName, returningUsed);
     });
-    await actor.unsetFlag(moduleName, returningUsed);
-  });
+  }
 };
 
-export default async () => {
+export default () => {
   Hooks.on('midi-qol.preAttackRollComplete', onPreAttackRollComplete);
   Hooks.on('updateCombat', onUpdateCombat);
   log('Loaded returning items');
