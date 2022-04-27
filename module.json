@@ -2,9 +2,13 @@
   "name": "aardvarks",
   "title": "Aardvarks",
   "description": "This module automates some of my homebrew rules for DnD 5e.",
-  "version": "1.0.0",
+  "version": "This is auto replaced",
   "minimumCoreVersion": "9",
-  "author": "aquavitae",
+  "authors": [
+    {
+      "name": "aquavitae"
+    }
+  ],
   "dependencies": [
     {
       "name": "lib-wrapper"
@@ -12,5 +16,8 @@
   ],
   "esmodules": [
     "scripts/index.js"
-  ]
+  ],
+  "url": "This is auto replaced",
+  "manifest": "This is auto replaced",
+  "download": "This is auto replaced"
 }
