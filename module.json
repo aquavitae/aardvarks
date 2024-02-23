@@ -3,7 +3,7 @@
   "title": "Aardvarks",
   "description": "This module automates some of my homebrew rules for DnD 5e.",
   "version": "This is auto replaced",
-  "minimumCoreVersion": "9",
+  "minimumCoreVersion": "11",
   "authors": [
     {
       "name": "aquavitae"
@@ -12,6 +12,11 @@
   "dependencies": [
     {
       "name": "lib-wrapper"
+    }, {
+      "id": "_chatcommands",
+      "type": "module",
+      "manifest": "https://gitlab.com/woodentavern/foundryvtt-chat-command-lib/-/raw/master/src/module.json",
+      "compatibility": { "verified": "2.0.1" }
     }
   ],
   "esmodules": [
