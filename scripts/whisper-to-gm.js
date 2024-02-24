@@ -41,7 +41,9 @@ Hooks.on('chatCommandsReady', (commands) => {
     icon: "<i class='fas fa-message'></i>",
     requiredRole: 'NONE',
     callback: (_, message) => {
-      const whisperTargets = Array.from(game.user.targets).flatMap((x) => getTokenOwner(x)).filter(x=>x !== 'Gamemaster');
+      const whisperTargets = Array.from(game.user.targets)
+        .flatMap((x) => getTokenOwner(x))
+        .filter((x) => x !== 'Gamemaster');
 
       const targetNames = Array.from(game.user.targets)
         .map((x) => x.name)
