@@ -12,7 +12,7 @@ Hooks.on('chatCommandsReady', (commands) => {
         return null;
       }
 
-      const m = parameters.match(/^(?:\[(.*?)\])(.*)/) || p.match(/^(.*?) (.*)/);
+      const m = parameters.match(/^(?:\[(.*?)\])(.*)/) || parameters.match(/^(.*?) (.*)/);
       if (!m) {
         return {};
       }
@@ -24,7 +24,7 @@ Hooks.on('chatCommandsReady', (commands) => {
         return null;
       }
 
-      ui.chat.processMessage(`/whisper [Gamemaster, ${targets.join(', ')}] ${message}`);
+      ui.chat.processMessage(`/whisper [Gamemaster, ${targets}] ${message}`);
 
       return {};
     };
@@ -50,6 +50,9 @@ Hooks.on('chatCommandsReady', (commands) => {
         .sort()
         .join(', ');
 
+      if (targetNames.length === 0) {
+        return {};
+      }
       const targets = Array.from(new Set([...whisperTargets])).join(', ');
 
       const m = `<small><strong>To: <em>${targetNames}</em></strong></small><br/>${message}`;
